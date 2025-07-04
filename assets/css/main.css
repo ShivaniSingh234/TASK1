@@ -1396,7 +1396,7 @@ body.is-preload #bg:before {
   position: relative;
   margin-top: 3.5rem;
 }
-
+/* 
 #header > *:before {
   content: "";
   display: block;
@@ -1406,27 +1406,27 @@ body.is-preload #bg:before {
   width: 1px;
   height: calc(3.5rem + 1px);
   background: #ffffff;
-}
+} */
 
-#header > :first-child {
+/* #header > :first-child {
   margin-top: 0;
-}
-
+} */
+ 
 #header > :first-child:before {
   display: none;
 }
 
-#header .logo {
+/* #header .logo {
   width: 5.5rem;
   height: 5.5rem;
   line-height: 5.5rem;
   border: solid 1px #ffffff;
   border-radius: 100%;
-}
+} */
 
-#header .logo .icon:before {
+/* #header .logo .icon:before {
   font-size: 2rem;
-}
+} */
 
 #header .content {
   border-style: solid;

@@ -16,18 +16,203 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  .light-blue-button {
+    background-color: inherit; /* Keeps the original background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .light-blue-button:hover {
+    box-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db;
+  }
+</style>
+
+<style>
+  .hover-glow {
+    background-color: #0d0d0e !important;
+    box-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db;
+  }
+</style>
+
+    <style>
+    /* Optional: basic styling */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(255, 252, 252);
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    /* Class added on hover */
+    .hover-highlight {
+      background-color: #ffeaa7; /* Light yellow */
+      color: #29bae2; /* Dark text */
+    }
+  </style>
+<style>
+    /* Glow effect class */
+    .glow-shake {
+      color: #fff;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #0b0d8e,
+        0 0 20px #0f094c,
+        0 0 30px #4639c0,
+        0 0 40px #2c0282;
+      animation: glowPulse 2s infinite alternate,shake 1s infinite;
+      display: inline-block;
+    }
+
+    /* Optional animation */
+    @keyframes glowPulse {
+      from {
+        text-shadow:
+          0 0 5px #fff,
+          0 0 10px #0b0d8e,
+        0 0 20px #0f094c,
+        0 0 30px #4639c0,
+        0 0 40px #2c0282;
+      }
+      to {
+        text-shadow:
+          0 0 10px #0b0d8e,
+        0 0 20px #0f094c,
+        0 0 30px #4639c0,
+        0 0 40px #2c0282;
+      }
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-1px); }
+      50% { transform: translateX(1px); }
+      75% { transform: translateX(-1px); }
+      100% { transform: translateX(0); }
+    }
+
+  
+.reappear-animation {
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+  .highlighted {
+    background-color: #ffeaa7;
+    color: #2d3436;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+  }
+
+
+
+  </style>
+  <style>
+    .icon-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-hover:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #00d1ff, 0 0 20px #0077ff;
+  color: #00c3ff;
+}
+
+/* Optional: animate icons on page load */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icons li {
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+}
+
+    
+  </style
+  <style>
+  @keyframes fadeInOnce {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .show-once {
+    opacity: 0;
+    animation: fadeInOnce 2s ease-out forwards;
+  }
+</style>
+<style>
+  .glow-text {
+  color: #fff;
+  text-shadow: 0 0 5px #00ffe0, 0 0 10px #00ffe0, 0 0 15px #00a3cc;
+  animation: glowBlink 2s infinite alternate;
+}
+
+@keyframes glowBlink {
+  from {
+    text-shadow: 0 0 5px #00ffe0, 0 0 10px #00ffe0, 0 0 15px #00a3cc;
+  }
+  to {
+    text-shadow: 0 0 10px #00ffe0, 0 0 15px #00ffe0, 0 0 20px #00a3cc;
+  }
+}
+
+</style>
+<!-- for image appearing -->
+<style>
+  .slide-image {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+</style>
+
+
   </head>
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
       <!-- Header -->
       <header id="header">
-        <div class="logo">
-          <span class="icon fa-gem"></span>
+        <div class="">
+          <!-- <span class="icon fa-gem"></span> -->
         </div>
         <div class="content">
           <div class="inner">
-            <h1>SHIVANI</h1>
+            <h1 id = "name">SHIVANI</h1>
             <p>
               Hi, I was, a student of Information Technology at Muzaffarpur
               Institute of Technology. I'm passionate about learning, growth,
@@ -52,15 +237,18 @@
       <div id="main">
         <!-- Intro -->
         <article id="about">
-          <h2 class="major">About</h2>
-          <span class="image main"><img src="images/25(1).jpg" alt="" height="550px" />
+  <h2 class="major">About</h2>
+  <img id="appear-once" src="images/25(1).jpg" alt="" height="550px" />
 </span>
+  <!-- Your about text here -->
+
+
 
           <p>
             I am a dedicated Information Technology graduate from Muzaffarpur
             Institute of Technology, with a strong foundation in software
             development, machine learning, and academic research, check out my
-            <a href="#projects">awesome work</a>. My experience spans real-time
+            <a href="#projects" id = "awesome">awesome work</a>. My experience spans real-time
             web applications, low-light image enhancement models, and research
             integrating ancient knowledge with modern technology.
           </p>
@@ -72,14 +260,14 @@
             continue to apply and enhance my skills in real-world projects while
             contributing effectively as part of a professional team. I have attatched my <a
               href="https://drive.google.com/file/d/1HbaBwCqPp4i2mB2Jyys4DBykloC2djFJ/view?usp=sharing"
-              target="_blank"
+              target="_blank" id="resume"
             >
               resume
             </a>
  as well.
             
           </p>
-		  <a href="#">Home</a>
+		  <a href="#" id= "home-link">Home</a>
         </article>
 
         <!-- Work -->
@@ -89,21 +277,24 @@
           <p>
             Here are a few of the key projects I’ve worked on during my academic
             and personal learning journey:
-            <li><a href="https://github.com/ShivaniSingh234/TextConverter">Text convertor</a></li>
-            
+            <br>
+             <button id="bluebutton" class="light-blue-button"><li><a href="https://github.com/ShivaniSingh234/TextConverter">Text convertor</a></li></button>
+            <br>
             A web-based application that allows users to convert text between
             different formats. Built using HTML, CSS, JavaScript, and React,
             this project helped strengthen my front-end development skills and
             understanding of interactive user interfaces.
-            
-            <li><a href="https://drive.google.com/file/d/17KZoIWz4nc6MGY9AB-QDKvd1r2gqlS3m/view?usp=sharing">Air Quality Index Analysis</a></li>
+            <br><br>
+           <button id="bluebutton" class="light-blue-button"><li><a href="https://drive.google.com/file/d/17KZoIWz4nc6MGY9AB-QDKvd1r2gqlS3m/view?usp=sharing">Air Quality Index Analysis</a></li></button> 
+           <br>
             Conducted analysis and forecasting of air quality trends using
             time-series data. Utilized Python and machine learning models like
             LSTM and RNN to predict PM2.5 and PM10 levels, showcasing the
             application of deep learning in environmental monitoring.
-
-			<li>Low-Light Image Enhancement</li>
+<br><br>
+			<button id="bluebutton" class="light-blue-button"><li>Low-Light Image Enhancement</li></button>
             <a href=""></a>
+            <br>
             Developed a deep learning model to enhance visibility in low-light
             images. This project involved working with image datasets and
             implementing AI/ML techniques using Python to improve image clarity
@@ -119,21 +310,24 @@
           <p>
             Alongside my academic projects, I have also gained practical
             experience through the following internships: 
-			<li>Python Development
-            Intern – NIELIT, Muzaffarpur | Feb. 2025 -- June 2025</li> 
+			<u><li>Python Development
+            Intern – NIELIT, Muzaffarpur | Feb. 2025 -- June 2025</li> </u>
+          
 			Worked on real-world applications
             involving Python programming, with a focus on low-light image
             enhancement using AI and ML techniques. This internship provided
             hands-on exposure to deep learning models, dataset handling, and
-            performance evaluation. 
-			<li>Salesforce Virtual Internship | Jan. 2024 -- Feb. 2024</li>
+            performance evaluation.
+            <br><br> 
+			<u><li>Salesforce Virtual Internship | Jan. 2024 -- Feb. 2024</li></u>
+            
 			SmartBridge(in collaboration with Salesforce) Completed a guided virtual
             internship program that introduced me to the Salesforce platform and
             CRM fundamentals. Learned how to build and customize applications
             using Salesforce tools, enhancing my understanding of cloud-based
             business solutions.
           </p>
-		  <a href="#">Home</a>
+		  <a href="#" id="home-link">Home</a>
         </article>
 
         <!-- Contact -->
@@ -141,31 +335,24 @@
           <h2 class="major">Contact</h2>
 			<p>You can find me on the following platforms:</p>
           
-          <ul class="icons">
-            <li>
-            <a
-              href="mailto:shivusingh23456@gmail.com"
-              class="icon solid fa-envelope"
-              ><span class="label">Email</span></a
-            >
-          </li>
+          <ul class="icons" style="display: flex; gap: 30px; justify-content: center;">
+  <li style="text-align: center;">
+    <a href="mailto:shivusingh23456@gmail.com" class="icon solid fa-envelope"></a>
+    <span style="display: block; font-size: 14px; color: #ffffff;">Email</span>
+  </li>
 
-            <li>
-            <a
-              href="https://www.linkedin.com/in/shivani-0746b122a/"
-              class="icon brands fa-linkedin-in"
-              ><span class="label">LinkedIn</span></a
-            >
-          </li>
-            
-            <li>
-              <a href="https://github.com/ShivaniSingh234" class="icon brands fa-github"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-			
-          </ul>
-		  <a href="#">Home</a>
+  <li style="text-align: center;">
+    <a href="https://www.linkedin.com/in/shivani-0746b122a/" class="icon brands fa-linkedin-in"></a>
+    <span style="display: block; font-size: 14px; color: #ffffff;">LinkedIn</span>
+  </li>
+
+  <li style="text-align: center;">
+    <a href="https://github.com/ShivaniSingh234" class="icon brands fa-github"></a>
+    <span style="display: block; font-size: 14px; color: #ffffff;">GitHub</span>
+  </li>
+</ul>
+
+		  <a href="#" id="home-link">Home</a>
         </article>
 
         <!-- Elements -->
@@ -382,7 +569,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 <a href="#" class="button primary icon solid fa-download"
                   >Icon</a
                 >
-              </li>
+              </li>+
               <li>
                 <a href="#" class="button icon solid fa-download">Icon</a>
               </li>
@@ -495,5 +682,76 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+  // Select all nav links
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  // Add hover event listeners
+  navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+      link.classList.add('hover-highlight');
+    });
+    link.addEventListener('mouseout', () => {
+      link.classList.remove('hover-highlight');
+    });
+  });
+</script>
+<script>
+    // Add glow class to name
+    document.getElementById("name").classList.add("glow-shake");
+  </script>
+<script>
+  // Trigger one-time appearance animation
+  document.getElementById('appear-once').classList.add('show-once');
+</script>
+<script>
+  document.getElementById("awesome").classList.add("glow-text");
+  document.getElementById("resume").classList.add("glow-text");
+  // Apply glow to all 'Home' links
+  document.querySelectorAll('.home-link').forEach(link => {
+    link.classList.add('glow-text');
+  });
+</script>
+<!-- <script>
+  $(document).ready(function () {
+    // Add class for styling
+    $("#blueButton").addClass("light-blue-button");
+
+    // Optional: Add a click effect
+    $("#blueButton").click(function () {
+      alert("Button clicked!");
+    });
+  });
+</script> -->
+<script>
+  $(document).ready(function () {
+    // Add hover effect class
+    $(".icons a").addClass("icon-hover");
+
+    // Animate icons one by one
+    $(".icons li").each(function (i) {
+      $(this).css("animation-delay", (i * 0.2) + "s");
+    });
+  });
+</script>
+<script>
+  let imageShown = false;
+
+  document.querySelector('a[href="#about"]').addEventListener('click', function () {
+    if (!imageShown) {
+      const img = document.getElementById('appear-once');
+      img.classList.add('slide-in');
+      imageShown = true;
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("bluebutton");
+    btn.classList.add("light-blue-button");
+  });
+</script>
+
   </body>
 </html>
